@@ -7,7 +7,7 @@ nav
 	left: 0
 	right: 0
 	margin: 0 auto
-	background-color: rgba(45, 62, 80, 0.7)
+	background-color: $primary
 	box-shadow: 0 0 11px rgba(0, 0, 0, .5)
 	z-index: 5
 	backdrop-filter: blur(5px)
@@ -16,6 +16,7 @@ nav
 		justify-content: space-between
 		align-items: center
 		padding: 10px 20px
+		max-width: 100%
 		.logo
 			@extend .righteous
 			color: $secondary
@@ -70,21 +71,48 @@ nav
 	.box
 		transition: .4s
 		position: fixed
-		right: -320px
+		left: -250px
 		top: $navHeight
 		height: calc(100% - #{$navHeight})
-		width: 320px
-		box-shadow: 0 10px 11px rgba(0, 0, 0, 0.5)
+		width: 250px
+		box-shadow: 0 5px 11px rgba(0, 0, 0, 0.5)
 		z-index: 4
 		opacity: 0
 		&.active
 			opacity: 1
-			right: 0px
+			left: 0px
 		&:nth-child(1)
 			background-color: rgba(100, 250, 250, 0.5)
 			backdrop-filter: blur(5px)
 		&:nth-child(2)
 			background-color: rgba(45, 62, 80, 0.8)
+			padding-top: 10px
+			hr
+				width: 90%
+				margin: 10px auto
+			a
+				color: #fff
+				padding: 10px 20px
+				display: flex
+				align-items: center
+				transition: .5s
+				svg
+					width: 20px
+					height: 20px
+					fill: #fff
+					transition: .5s
+					*
+						transition: .5s
+						fill: #fff
+				span
+					margin-left: 10px
+				&.nuxt-link-active, &:hover
+					background-color: darken($secondary, 30%)
+					color: $primary
+					svg
+						fill: $primary
+						*
+							fill: $primary
 
 .under-construction-modal
 	max-width: 400px
@@ -161,5 +189,8 @@ nav
 					border: none
 				a
 					color: darken($secondary, 50%)
+
+.page-home
+
 
 // wew

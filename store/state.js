@@ -1,5 +1,5 @@
 export default {
-    showMobNav: false,
+    showMobNav: true,
     showModal: false,
     showUnderConstructionModal: false,
 }
