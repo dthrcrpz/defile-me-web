@@ -1,0 +1,32 @@
+{
+  "name": "defile-web-me",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.5",
+    "core-js": "^3.8.3",
+    "node-sass": "^5.0.0",
+    "nuxt": "^2.14.12",
+    "v-click-outside": "^3.1.2",
+    "vue-scrollto": "^2.20.0"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.1.2",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^26.6.3",
+    "fibers": "^5.0.0",
+    "install": "^0.13.0",
+    "jest": "^26.6.3",
+    "npm": "^7.5.2",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.0",
+    "vue-jest": "^3.0.4"
+  }
+}

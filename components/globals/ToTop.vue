@@ -1,0 +1,15 @@
+<template>
+	<div class="to-top" @click="toTop()">
+		<svg enable-background="new 0 0 80 80" height="80px" id="Icons" version="1.1" viewBox="0 0 80 80" width="80px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#2d3e50"><g><rect height="5" width="38" x="21.082" y="19"/><polygon points="20.629,46.082 24.164,49.617 37.582,36.199 37.582,61 42.582,61 42.582,36.363 55.836,49.617 59.371,46.082    40,26.711  "/></g></svg>
+	</div>
+</template>
+
+<script>
+	export default {
+		methods: {
+			toTop () {
+				this.$scrollTo('nav')
+			}
+		}
+	}
+</script>
