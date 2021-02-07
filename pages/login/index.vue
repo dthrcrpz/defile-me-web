@@ -8,7 +8,7 @@
 				<div class="title">Login</div>
 				<div class="desc">
 					<p>Welcome, please login to continue</p>
-					<p>Don't have an account? <nuxt-link to="register">Register here</nuxt-link></p>
+					<p>Don't have an account? <nuxt-link to="/register">Register here</nuxt-link></p>
 				</div>
 				<form @submit.prevent="login()">
 					<div class="form-group">
