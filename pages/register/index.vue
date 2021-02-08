@@ -35,6 +35,7 @@
 <script>
 	export default {
 		layout: 'auth',
+		auth: false,
 		methods: {
 			register () {
 

@@ -134,6 +134,14 @@ nav
 			font-size: 16px
 			color: $primary
 
+.image-viewer, .video-viewer
+	max-width: 1024px
+	padding: 20px
+	@extend .noselect
+	img
+		margin: auto
+		width: 100%
+
 .login-page
 	display: flex
 	align-items: center
@@ -145,6 +153,7 @@ nav
 		padding: 0
 		display: flex
 		box-shadow: 0 0 11px rgba(0, 0, 0, 0.5)
+		flex-flow: row wrap
 		.left
 			flex: 0 0 55%
 			background-image: url('/images/login-background.jpg')
@@ -206,25 +215,42 @@ nav
 	table
 		width: 100%
 		border-collapse: collapse
+		@extend .noselect
 		tr
 			transition: .5s
 			td, th
 				text-align: left
 				border-bottom: 1px solid #cecece
 				padding: 5px
+			.thumbnail-cell
+				img
+					max-width: 50px
+					width: 100%
 			&:hover
 				background-color: #f1f1f1
 			&:nth-child(even)
 				background-color: #f1f1f1
 			.actions
-				display: flex
-				align-items: center
-				a
-					width: 40px
-					display: block
-					height: 40px
-					img
-						width: 100%
-					&.view
-						margin-right: 5px
+				.buttons-container
+					display: flex
+					flex-flow: row wrap
+					align-items: center
+					justify-content: flex-start
+					a
+						width: 40px
+						height: 40px
+						img
+							width: 100%
+						&.view
+							margin-right: 5px
+
+@media (max-width: 768px)
+	.login-page
+		.container
+			height: 100%
+			.left, .right
+				flex: 0 0 100%
+			.left
+				background-position: top
+
 // wew

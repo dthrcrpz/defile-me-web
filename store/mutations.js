@@ -7,5 +7,5 @@ export default {
     },
     toggleUnderConstructionModal (state, data) {
     	state.showUnderConstructionModal = data
-    }
+    },
 }

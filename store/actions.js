@@ -1,5 +1,5 @@
 export default {
-	setPokemonData ({ commit }, data) {
-		commit('setPokemonData', data)
+	setSomethingData ({ commit }, data) {
+		commit('setSomethingData', data)
 	},
 }
