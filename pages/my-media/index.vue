@@ -66,10 +66,13 @@
 				return this.$moment(string).format('YYYY-MM-DD hh:mm:ss A')
 			},
 			viewMedia (path, type) {
-				if (type == 'image') {
-					this.imageToView = path
-				} else {
-					this.videoToPlay = path
+				switch (type) {
+					case 'image':
+						this.imageToView = path
+						break
+					case 'video':
+						this.videoToPlay = path
+						break
 				}
 
 				this.$store.commit('toggleModal', true)

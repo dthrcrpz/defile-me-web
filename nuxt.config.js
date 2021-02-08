@@ -20,12 +20,19 @@ export default {
     '~/assets/sass/app.sass',
   ],
 
+  loading: {
+    color: '#64fafa',
+    throttle: 0,
+    height: '4px'
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-scrollto', ssr: false },
     { src: '~/plugins/v-click-outside', ssr: false },
     { src: '~/plugins/filters' },
     { src: '~/plugins/mixins' },
+    { src: '~/plugins/vee-validate' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

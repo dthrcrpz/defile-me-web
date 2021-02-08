@@ -8,4 +8,7 @@ export default {
     toggleUnderConstructionModal (state, data) {
     	state.showUnderConstructionModal = data
     },
+    toggleRegistrationSuccessModal (state, value) {
+    	state.showRegistrationSuccessModal = value
+    }
 }

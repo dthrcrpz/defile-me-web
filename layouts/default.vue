@@ -23,7 +23,7 @@
 
 	export default {
 		components: {
-			Navbar, SideNav, UnderConstruction, ToTop
+			Navbar, SideNav, UnderConstruction, ToTop, ModalBackground
 		},
 		computed: {
 			...mapGetters({
