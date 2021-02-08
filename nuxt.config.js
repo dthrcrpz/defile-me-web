@@ -25,7 +25,7 @@ export default {
     { src: '~/plugins/vue-scrollto', ssr: false },
     { src: '~/plugins/v-click-outside', ssr: false },
     { src: '~/plugins/filters' },
-    { src: '~/plugins/mixins' }
+    { src: '~/plugins/mixins' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,16 +33,45 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '@nuxtjs/moment',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.API_URL
+  },
+
+  router: {
+    middleware: ['auth']
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: `${process.env.API_URL}users/login`, method: 'post' },
+          logout: { url: `${process.env.API_URL}user/logout`, method: 'post' },
+          user: { url: `${process.env.API_URL}user`, method: 'get' }
+        },
+      }
+    },
+  },
 
   env: {
     API_URL: process.env.API_URL

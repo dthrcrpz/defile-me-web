@@ -12,10 +12,10 @@
 				</div>
 				<form @submit.prevent="login()">
 					<div class="form-group">
-						<input type="text" name="email" placeholder="Email Address">
+						<input type="text" name="email" placeholder="Email Address" v-model="loginForm.email">
 					</div>
 					<div class="form-group">
-						<input type="password" name="password" placeholder="Password">
+						<input type="password" name="password" placeholder="Password" v-model="loginForm.password">
 					</div>
 					<div class="button-container">
 						<button>Login</button>
@@ -32,12 +32,19 @@
 		layout: 'auth',
 		methods: {
 			login () {
-
+		        this.$auth.loginWith('local', { data: this.loginForm }).then(res => {
+		        	console.log(res)
+		        }).catch(err => {
+		        	console.log(err)
+		        })
 			}
 		},
 		data () {
 			return {
-
+				loginForm: {
+					email: 'dthrcrpz@gmail.com',
+					password: 'password'
+				}
 			}
 		},
 		head () {

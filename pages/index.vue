@@ -5,7 +5,7 @@
 <script>
 	export default {
 		mounted () {
-			this.$router.push('/upload-files')
+			this.$router.push('/upload-media')
 		}
 	}
 </script>

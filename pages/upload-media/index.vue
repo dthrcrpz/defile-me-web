@@ -24,12 +24,33 @@
 					url: `${process.env.API_URL}medias`,
 					thumbnailWidth: 150,
 					acceptedFiles: 'image/*, video/mp4',
+					headers: {
+						'Authorization': this.$auth.strategy.token.get()
+					},
+					addRemoveLinks: true
 				}
 			}
 		},
 		methods: {
 			initializeDropzone () {
 			    const instance = this.$refs.el.dropzone
+
+			    instance.on('success', (file, res) => {
+			    	// add the media id to the preview link dom
+			    	file.previewElement.setAttribute('media_id', res.media.id)
+			    })
+
+			    // instance.on('removedfile', (file) => {
+			    // 	// get the media id of the target file
+			    // 	let mediaId = file.previewElement.getAttribute('media_id')
+
+			    // 	// call the delete media api
+			    // 	this.$axios.delete(`medias/${mediaId}`).then(res => {
+			    // 		console.log(res.data)
+			    // 	}).catch(err => {
+			    // 		console.log(err)
+			    // 	})
+			    // })
 			}
 		},
 		mounted () {
