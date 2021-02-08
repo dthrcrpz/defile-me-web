@@ -23,7 +23,7 @@
 							<a href="javascript:void(0)" class="view" @click="viewMedia(media.path, media.type)">
 								<img src="/images/view.svg">
 							</a>
-							<a href="javascript:void(0)" class="delete">
+							<a href="javascript:void(0)" class="delete" @click="confirmDelete(media.id)">
 								<img src="/images/delete.svg">
 							</a>
 						</div>
@@ -76,6 +76,24 @@
 				}
 
 				this.$store.commit('toggleModal', true)
+			},
+			loadMedia () {
+				this.$axios.get(`medias`).then(res => {
+					this.medias = res.data.medias
+				}).catch(err => {
+					console.log(err)
+				})
+			},
+			confirmDelete (media_id) {
+				let result = confirm('Are you sure you want to delete this item?')
+
+				if (result) {
+					this.$axios.delete(`medias/${media_id}`).then(res => {
+						this.loadMedia()
+					}).catch(err => {
+						console.log(err)
+					})
+				}
 			}
 		},
 		asyncData ({ $axios, $auth }) {
